@@ -16,7 +16,7 @@
     </UserControl.Resources>
     <DockPanel>
         <TextBlock DockPanel.Dock="Top" 
-                   Text="STUDENT"
+                   Text="Student"
                    Width="auto" 
                    Height="auto" 
                    FontSize="25" 
