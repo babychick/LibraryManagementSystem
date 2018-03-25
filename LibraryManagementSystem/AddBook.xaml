@@ -1,0 +1,99 @@
+﻿<UserControl x:Class="LibraryManagementSystem.AddBook"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LibraryManagementSystem"
+             mc:Ignorable="d" 
+             d:DesignHeight="380" d:DesignWidth="600">
+    <UserControl.Resources>
+        <Style x:Key="header" TargetType="{x:Type TextBlock}">
+            <Setter Property="Foreground" Value="DarkCyan"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Margin" Value="0, 15, 0, 0"/>
+            <Setter Property="Background" Value="WhiteSmoke"></Setter>
+        </Style>
+
+        <Style x:Key="value" TargetType="{x:Type TextBox}">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="Width" Value="auto"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Margin" Value="0, 10, 0, 0"/>
+            <Setter Property="Width" Value="360"/>
+            <Setter Property="BorderThickness" Value="0, 0, 0, 1"/>
+            <Setter Property="Background" Value="WhiteSmoke"></Setter>
+            <Setter Property="Foreground" Value="Black"></Setter>
+        </Style>
+
+        <Style x:Key="publicdate" TargetType="ComboBox">
+            <Setter Property="Width" Value="100"></Setter>
+            <Setter Property="Background" Value="WhiteSmoke"></Setter>
+            <Setter Property="Foreground" Value="Black"></Setter>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Margin" Value="15, 0, 0, 0"></Setter>
+            <Setter Property="FontSize" Value="15"></Setter>
+            <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+        </Style>
+    </UserControl.Resources>
+    <DockPanel>
+        
+        <!--#region Titlte-->
+        <TextBlock DockPanel.Dock="Top" 
+                   Text="NEW BOOK"
+                   Width="auto" 
+                   Height="60" 
+                   FontSize="25" 
+                   Background="WhiteSmoke" 
+                   Foreground="DarkCyan"
+                   TextAlignment="Center"
+                   Padding="0, 15, 0, 0"/>
+        <!--#endregion-->
+        
+        <!--#region Item-->
+        <Grid Background="WhiteSmoke" DockPanel.Dock="Top" Height="260">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="2.4*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Left -->
+            <StackPanel Grid.Column="0" Margin="75, 0, 0, 0">
+                <TextBlock Text="Book ID" Style="{StaticResource header}"/>
+                <TextBlock Text="Name" Style="{StaticResource header}"/>
+                <TextBlock Text="Writer" Style="{StaticResource header}"/>
+                <TextBlock Text="Category" Style="{StaticResource header}"/>
+                <TextBlock Text="Quantity" Style="{StaticResource header}"/>
+                <TextBlock Text="Public date" Style="{StaticResource header}"/>
+            </StackPanel>
+
+            <!-- Right -->
+            <StackPanel Grid.Column="1" HorizontalAlignment="Left" Margin="0, 10, 0, 0" AutomationProperties.ItemType="Number">
+                <TextBox Text="B-0001" Foreground="DimGray" FontWeight="Bold" BorderThickness="0" Width="100"  Style="{StaticResource value}"/>
+                <TextBox Text="WPF &amp; MVVM in .NET" Style="{StaticResource value}"/>
+                <TextBox Text="Nguyễn Đình Phi" Style="{StaticResource value}"/>
+                <ComboBox Name="cbxCategory" Text="Category" FontSize="15" Background="WhiteSmoke" Margin="0, 17, 0, 0" BorderThickness="0"></ComboBox>
+                <ListBox Name="lstQuantity" Height="30" FontSize="18" Margin="0, 12, 0, 0" Background="WhiteSmoke" BorderThickness="0, 0, 0, 1" ScrollViewer.CanContentScroll="True" SnapsToDevicePixels="True" IsSynchronizedWithCurrentItem="False" IsHitTestVisible="True">
+                    <ListBoxItem>1</ListBoxItem>
+                    <ListBoxItem>2</ListBoxItem>
+                </ListBox>
+                <StackPanel Orientation="Horizontal" Margin="0, 10, 0, 0">
+                    <ComboBox Text="05" Style="{StaticResource publicdate}"></ComboBox>
+                    <ComboBox Text="01" Style="{StaticResource publicdate}"></ComboBox>
+                    <ComboBox Text="1996" Style="{StaticResource publicdate}"></ComboBox>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+        <!--#endregion-->
+
+        <!--#region Button Add-->
+        <Grid DockPanel.Dock="Bottom" Height="60" Background="WhiteSmoke">
+            <!--<Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>-->
+            <Button Content="Add" Background="WhiteSmoke" VerticalAlignment="Top" HorizontalAlignment="Center" Width="100" FontSize="16" Foreground="Black"/>
+        </Grid>
+        <!--#endregion-->
+
+    </DockPanel>
+</UserControl>

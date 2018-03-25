@@ -1,0 +1,89 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:LibraryManagementSystem"
+        xmlns:dxn="http://schemas.devexpress.com/winfx/2008/xaml/navbar" xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars" x:Class="LibraryManagementSystem.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="1000">
+    <Window.Resources>
+        <Style x:Key="tblItem" TargetType="TextBlock">
+            <Setter Property="Background" Value="LightCyan"></Setter>
+            <Setter Property="Foreground" Value="Black"></Setter>
+            <Setter Property="FontSize" Value="18"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        </Style>
+
+        <Style x:Key="iconItem" TargetType="materialDesign:PackIcon">
+            <Setter Property="Margin" Value="10 0 0 0"></Setter>
+            <Setter Property="Height" Value="30"></Setter>
+            <Setter Property="Width" Value="30"></Setter>
+            <Setter Property="VerticalAlignment" Value="Stretch"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
+        </Style>
+        <Style x:Key="slideMenu" TargetType="StackPanel">
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="UIElement.MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.50" Storyboard.TargetProperty="Width" To="160"></DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="UIElement.MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.50" Storyboard.TargetProperty="Width" To="50"></DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <DockPanel>
+        <Grid DockPanel.Dock="Top" Width="auto" Height="50" Background="DarkCyan">
+            <TextBlock Text="Library Management System" 
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"                        
+                       FontSize="22"
+                       Foreground="White"/>
+        </Grid>
+        
+        <StackPanel x:Name="stpMenu" Orientation="Vertical" Width="50" Height="auto" DockPanel.Dock="Left" Background="LightCyan" Style="{StaticResource slideMenu}">
+            <Border BorderThickness="0 0 0 1" BorderBrush="Black" Padding="0 5 0 5">
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="Home" Style="{StaticResource iconItem}"></materialDesign:PackIcon>
+                    <TextBlock Text="Home" Style="{StaticResource tblItem}" Margin="35 0 0 0"></TextBlock>
+                </StackPanel> 
+            </Border>
+            <Border BorderThickness="0 0 0 1" BorderBrush="Black" Padding="0 5 0 5">
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="AccountMultiple" Style="{StaticResource iconItem}"></materialDesign:PackIcon>
+                    <TextBlock Text="Member" Style="{StaticResource tblItem}" Margin="25 0 0 0"></TextBlock>
+                </StackPanel>
+            </Border>
+            <Border BorderThickness="0 0 0 1" BorderBrush="Black" Padding="0 5 0 5">
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="DipSwitch" Style="{StaticResource iconItem}"></materialDesign:PackIcon>
+                    <TextBlock Text="Book" Style="{StaticResource tblItem}" Margin="37 0 0 0"></TextBlock>
+                </StackPanel>
+            </Border>
+            <Border BorderThickness="0 0 0 1" BorderBrush="Black" Padding="0 5 0 5">
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="BookOpenVariant" Style="{StaticResource iconItem}"></materialDesign:PackIcon>
+                    <TextBlock Text="Borrow" Style="{StaticResource tblItem}" Margin="30 0 0 0"></TextBlock>
+                </StackPanel>
+            </Border>
+            <Border BorderThickness="0 0 0 1" BorderBrush="Black" Padding="0 5 0 5">
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="AccountAlert" Style="{StaticResource iconItem}"></materialDesign:PackIcon>
+                    <TextBlock Text="Penalty" Style="{StaticResource tblItem}" Margin="29 0 0 0"></TextBlock>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+        <Grid x:Name="gridMainContent" DockPanel.Dock="Left">
+        </Grid>
+    </DockPanel>
+</Window>
