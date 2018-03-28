@@ -6,21 +6,21 @@
              xmlns:local="clr-namespace:LibraryManagementSystem"
              xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" x:Class="LibraryManagementSystem.AddMember"
              mc:Ignorable="d" 
-             d:DesignHeight="380" d:DesignWidth="600">
+             d:DesignHeight="380" d:DesignWidth="800">
     <!--#region Resources-->
     <UserControl.Resources>
         <Style x:Key="header" TargetType="{x:Type TextBlock}">
             <Setter Property="Foreground" Value="DarkCyan"/>
             <Setter Property="FontSize" Value="18"/>
-            <Setter Property="Margin" Value="0, 15, 0, 0"/>
+            <Setter Property="Margin" Value="0 15 0 0"/>
             <Setter Property="Background" Value="WhiteSmoke"></Setter>
+            <Setter Property="TextAlignment" Value="Center"></Setter>
         </Style>
-        <Style x:Key="value" TargetType="{x:Type TextBox}">
+        <Style x:Key="value" TargetType="TextBox">
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="Width" Value="auto"/>
             <Setter Property="FontSize" Value="18"/>
-            <Setter Property="Margin" Value="0, 10, 0, 0"/>
-            <Setter Property="Width" Value="300"/>
+            <Setter Property="Margin" Value="0, 14, 0, 0"/>
             <Setter Property="BorderThickness" Value="0, 0, 0, 1"/>
             <Setter Property="Background" Value="WhiteSmoke"></Setter>
             <Setter Property="Foreground" Value="Black"></Setter>
@@ -28,7 +28,7 @@
         <Style x:Key="radioButton" TargetType="{x:Type CheckBox}">
             <Setter Property="FontSize" Value="17"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Setter Property="Margin" Value="50, 0, 30, 0"/>
+            <Setter Property="Margin" Value="0, 0, 30, 0"/>
         </Style>
     </UserControl.Resources>
     <!--#endregion-->
@@ -52,11 +52,11 @@
         <Grid Background="WhiteSmoke" DockPanel.Dock="Top" Height="260">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
-                <ColumnDefinition Width="2.5*"/>
+                <ColumnDefinition Width="1.8*"/>
             </Grid.ColumnDefinitions>
 
             <!-- Left -->
-            <StackPanel Grid.Column="0" Margin="75, 0, 0, 0">
+            <StackPanel Grid.Column="0" Margin="0, 10, 30, 0" HorizontalAlignment="Right">
                 <TextBlock Text="Member ID" Style="{StaticResource header}"/>
                 <TextBlock Text="Name" Style="{StaticResource header}"/>
                 <TextBlock Text="Address" Style="{StaticResource header}"/>
@@ -66,35 +66,31 @@
             </StackPanel>
 
             <!-- Right -->
-            <StackPanel Grid.Column="1" HorizontalAlignment="Left" Margin="0, 0, 0, 0" AutomationProperties.ItemType="Number">
+            <StackPanel Grid.Column="1" HorizontalAlignment="Left" Margin="0, 10, 0, 0" Width="360">
                 <TextBox Text="ABC123" Foreground="DimGray" FontWeight="Bold" BorderThickness="0" Width="100"  Style="{StaticResource value}"/>
+                <TextBox Text="Nguyễn Đình Phi" Style="{StaticResource value}"/>
+                <TextBox Text="Long Xuyên, An Giang"  Width="auto" Style="{StaticResource value}"/>
 
-                <StackPanel Orientation="Horizontal">
-                    <TextBox Text="Nguyễn Đình Phi" BorderThickness="0, 0, 0, 1" Width="250" Style="{StaticResource value}"/>
-                    <TextBlock Text="Age" Margin="20, 15, 0, 0" Style="{StaticResource header}"/>
-                    <TextBox Text="22" Width="50" Style="{StaticResource value}"/>
+                <StackPanel Margin="0, 15, 0, 0" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <CheckBox Content="Male" Margin="20 0 0 0" IsChecked="True" Style="{StaticResource radioButton}"/>
+                    <CheckBox Content="Female" Margin="20 0 0 0" Style="{StaticResource radioButton}"/>
+                    <TextBlock Text="Age" Margin="40 0 0 0" Style="{StaticResource header}"/>
+                    <TextBox Text="22" Width="50" Margin="10 0 0 0" Style="{StaticResource value}"/>
                 </StackPanel>
 
-                <TextBox Text="Long Xuyên, An Giang"  Width="360" Style="{StaticResource value}"/>
-
-                <DockPanel Margin="0, 12, 0, 0" HorizontalAlignment="Center">
-                    <CheckBox Content="Male" DockPanel.Dock="Left"  IsChecked="True" Style="{StaticResource radioButton}"/>
-                    <CheckBox Content="Female" DockPanel.Dock="Right"  Style="{StaticResource radioButton}"/>
-                </DockPanel>
-
-                <TextBox Width="360" Text="Teacher" Style="{StaticResource value}"/>
-                <TextBox Width="360" Text="example@gmail.com" Style="{StaticResource value}"/>
+                <TextBox Text="Student" Margin="0 15 0 0" Style="{StaticResource value}"/>
+                <TextBox Text="example@gmail.com" Margin="0 10 0 0" Style="{StaticResource value}"/>
             </StackPanel>
         </Grid>
         <!--#endregion-->
 
         <!--#region Button Add-->
-        <Grid DockPanel.Dock="Bottom" Height="60" Background="WhiteSmoke">
+        <Grid DockPanel.Dock="Top" Height="auto" Background="WhiteSmoke">
             <!--<Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>-->
-            <Button Content="Add" VerticalAlignment="Top" HorizontalAlignment="Center" Width="100" FontSize="16" Foreground="DarkCyan" Background="WhiteSmoke"/>
+            <Button Content="Add" VerticalAlignment="Center" HorizontalAlignment="Center" Width="100" FontSize="16" Foreground="DarkCyan" Background="WhiteSmoke"/>
         </Grid>
         <!--#endregion-->
 

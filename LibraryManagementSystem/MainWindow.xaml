@@ -50,40 +50,39 @@
                        FontSize="22"
                        Foreground="White"/>
         </Grid>
-        
+
         <StackPanel x:Name="stpMenu" Orientation="Vertical" Width="50" Height="auto" DockPanel.Dock="Left" Background="LightCyan" Style="{StaticResource slideMenu}">
-            <Border BorderThickness="0 0 0 1" BorderBrush="Black" Padding="0 5 0 5">
+            <Border Padding="0 5 0 5">
                 <StackPanel Orientation="Horizontal">
                     <materialDesign:PackIcon Kind="Home" Style="{StaticResource iconItem}"></materialDesign:PackIcon>
                     <TextBlock Text="Home" Style="{StaticResource tblItem}" Margin="35 0 0 0"></TextBlock>
-                </StackPanel> 
+                </StackPanel>
             </Border>
-            <Border BorderThickness="0 0 0 1" BorderBrush="Black" Padding="0 5 0 5">
+            <Border Padding="0 5 0 5">
                 <StackPanel Orientation="Horizontal">
                     <materialDesign:PackIcon Kind="AccountMultiple" Style="{StaticResource iconItem}"></materialDesign:PackIcon>
                     <TextBlock Text="Member" Style="{StaticResource tblItem}" Margin="25 0 0 0"></TextBlock>
                 </StackPanel>
             </Border>
-            <Border BorderThickness="0 0 0 1" BorderBrush="Black" Padding="0 5 0 5">
+            <Border Padding="0 5 0 5">
                 <StackPanel Orientation="Horizontal">
                     <materialDesign:PackIcon Kind="DipSwitch" Style="{StaticResource iconItem}"></materialDesign:PackIcon>
                     <TextBlock Text="Book" Style="{StaticResource tblItem}" Margin="37 0 0 0"></TextBlock>
                 </StackPanel>
             </Border>
-            <Border BorderThickness="0 0 0 1" BorderBrush="Black" Padding="0 5 0 5">
+            <Border Padding="0 5 0 5">
                 <StackPanel Orientation="Horizontal">
                     <materialDesign:PackIcon Kind="BookOpenVariant" Style="{StaticResource iconItem}"></materialDesign:PackIcon>
                     <TextBlock Text="Borrow" Style="{StaticResource tblItem}" Margin="30 0 0 0"></TextBlock>
                 </StackPanel>
             </Border>
-            <Border BorderThickness="0 0 0 1" BorderBrush="Black" Padding="0 5 0 5">
+            <Border Padding="0 5 0 5">
                 <StackPanel Orientation="Horizontal">
                     <materialDesign:PackIcon Kind="AccountAlert" Style="{StaticResource iconItem}"></materialDesign:PackIcon>
                     <TextBlock Text="Penalty" Style="{StaticResource tblItem}" Margin="29 0 0 0"></TextBlock>
                 </StackPanel>
             </Border>
         </StackPanel>
-        <Grid x:Name="gridMainContent" DockPanel.Dock="Left">
-        </Grid>
+        <Grid x:Name="gridMainContent" DockPanel.Dock="Left"/>
     </DockPanel>
 </Window>
