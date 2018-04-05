@@ -72,14 +72,23 @@
     <Compile Include="AddMember.xaml.cs">
       <DependentUpon>AddMember.xaml</DependentUpon>
     </Compile>
-    <Compile Include="StudentList.xaml.cs">
-      <DependentUpon>StudentList.xaml</DependentUpon>
+    <Compile Include="BookList.xaml.cs">
+      <DependentUpon>BookList.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Books.cs" />
+    <Compile Include="MemberList.xaml.cs">
+      <DependentUpon>MemberList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Members.cs" />
     <Page Include="AddBook.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AddMember.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BookList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -95,7 +104,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="StudentList.xaml">
+    <Page Include="MemberList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
