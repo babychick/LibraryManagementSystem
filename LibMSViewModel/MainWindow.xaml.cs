@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace LibraryManagementSystem
+namespace LibMSViewModel
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -24,10 +23,6 @@ namespace LibraryManagementSystem
         public MainWindow()
         {
             InitializeComponent();
-            BookList a = new BookList();
-            MemberList b = new MemberList();
-            PenaltyList p = new PenaltyList();
-            gridMainContent.Children.Add(p);
         }
     }
 }

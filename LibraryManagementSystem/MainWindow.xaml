@@ -10,14 +10,14 @@
         Title="MainWindow" Height="500" Width="1000">
     <Window.Resources>
         <Style x:Key="tblItem" TargetType="TextBlock">
-            <Setter Property="Background" Value="LightCyan"></Setter>
+            <!--<Setter Property="Background" Value="LightCyan"></Setter>-->
             <Setter Property="Foreground" Value="Black"></Setter>
             <Setter Property="FontSize" Value="18"></Setter>
             <Setter Property="VerticalAlignment" Value="Center"></Setter>
         </Style>
 
         <Style x:Key="iconItem" TargetType="materialDesign:PackIcon">
-            <Setter Property="Margin" Value="10 0 0 0"></Setter>
+            <!--<Setter Property="Margin" Value="10 0 0 0"></Setter>-->
             <Setter Property="Height" Value="30"></Setter>
             <Setter Property="Width" Value="30"></Setter>
             <Setter Property="VerticalAlignment" Value="Stretch"></Setter>
@@ -41,6 +41,38 @@
                 </EventTrigger>
             </Style.Triggers>
         </Style>
+
+        <!-- Menu hover -->
+        <Style x:Key="itmHover" TargetType="Border">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <SolidColorBrush Color="LightCyan"/>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <!--<Trigger Property="IsMouseOver" Value="true">
+                    <Setter Property="Background" Value="Aquamarine"></Setter>
+                </Trigger>-->
+                <EventTrigger RoutedEvent="MouseEnter">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation  Duration="0:0:0.50" Storyboard.TargetProperty="Background.Color" To="Turquoise"></ColorAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="MouseLeave">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation Duration="0:0:0.50" Storyboard.TargetProperty="Background.Color" To="LightCyan"></ColorAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
     </Window.Resources>
     <DockPanel>
         <Grid DockPanel.Dock="Top" Width="auto" Height="50" Background="DarkCyan">
@@ -52,31 +84,31 @@
         </Grid>
 
         <StackPanel x:Name="stpMenu" Orientation="Vertical" Width="50" Height="auto" DockPanel.Dock="Left" Background="LightCyan" Style="{StaticResource slideMenu}">
-            <Border Padding="0 5 0 5">
+            <Border Padding="10 5 0 5" Style="{StaticResource itmHover}">
                 <StackPanel Orientation="Horizontal">
                     <materialDesign:PackIcon Kind="Home" Style="{StaticResource iconItem}"></materialDesign:PackIcon>
                     <TextBlock Text="Home" Style="{StaticResource tblItem}" Margin="35 0 0 0"></TextBlock>
                 </StackPanel>
             </Border>
-            <Border Padding="0 5 0 5">
+            <Border Padding="10 5 0 5" Style="{StaticResource itmHover}">
                 <StackPanel Orientation="Horizontal">
                     <materialDesign:PackIcon Kind="AccountMultiple" Style="{StaticResource iconItem}"></materialDesign:PackIcon>
                     <TextBlock Text="Member" Style="{StaticResource tblItem}" Margin="25 0 0 0"></TextBlock>
                 </StackPanel>
             </Border>
-            <Border Padding="0 5 0 5">
+            <Border Padding="10 5 0 5" Style="{StaticResource itmHover}">
                 <StackPanel Orientation="Horizontal">
                     <materialDesign:PackIcon Kind="DipSwitch" Style="{StaticResource iconItem}"></materialDesign:PackIcon>
                     <TextBlock Text="Book" Style="{StaticResource tblItem}" Margin="37 0 0 0"></TextBlock>
                 </StackPanel>
             </Border>
-            <Border Padding="0 5 0 5">
+            <Border Padding="10 5 0 5" Style="{StaticResource itmHover}">
                 <StackPanel Orientation="Horizontal">
                     <materialDesign:PackIcon Kind="BookOpenVariant" Style="{StaticResource iconItem}"></materialDesign:PackIcon>
                     <TextBlock Text="Borrow" Style="{StaticResource tblItem}" Margin="30 0 0 0"></TextBlock>
                 </StackPanel>
             </Border>
-            <Border Padding="0 5 0 5">
+            <Border Padding="10 5 0 5" Style="{StaticResource itmHover}">
                 <StackPanel Orientation="Horizontal">
                     <materialDesign:PackIcon Kind="AccountAlert" Style="{StaticResource iconItem}"></materialDesign:PackIcon>
                     <TextBlock Text="Penalty" Style="{StaticResource tblItem}" Margin="29 0 0 0"></TextBlock>

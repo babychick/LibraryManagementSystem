@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="LibraryManagementSystem.BookList"
+﻿<UserControl x:Class="LibraryManagementSystem.PenaltyList"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,9 +6,17 @@
              xmlns:local="clr-namespace:LibraryManagementSystem"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style x:Key="datagridHeader" TargetType="DataGridColumnHeader">
+            <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+            <Setter Property="Background" Value="White"></Setter>
+            <Setter Property="BorderThickness" Value="1, 0 ,1, 0"></Setter>
+            <Setter Property="BorderBrush" Value="Black"></Setter>
+        </Style>
+    </UserControl.Resources>
     <DockPanel>
         <TextBlock DockPanel.Dock="Top" 
-                   Text="Books"
+                   Text="Penalty"
                    Width="auto" 
                    Height="auto" 
                    FontSize="25" 
@@ -16,7 +24,17 @@
                    Foreground="DarkCyan"
                    TextAlignment="Center"
                    Padding="0, 15, 0, 15"></TextBlock>
-        <ListView Name="lvBook" DockPanel.Dock="Top" Width="700">
+
+        <ListView Name="lvPenalty" DockPanel.Dock="Top" Width="700">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="{x:Type ListViewItem}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Ispenalty}" Value="true">
+                            <Setter Property="Foreground" Value="Red"></Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </ListView.ItemContainerStyle>
             <ListView.View>
                 <GridView>
                     <!-- ID -->
@@ -34,41 +52,61 @@
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <Grid>
-                                    <TextBlock Text="{Binding Name}"></TextBlock>
+                                    <TextBlock Text="{Binding Name}" Width="100"></TextBlock>
                                 </Grid>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <!-- Writer -->
-                    <GridViewColumn Header="Writer">
+                    <!-- Job -->
+                    <GridViewColumn Header="Job">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <Grid>
-                                    <TextBlock Text="{Binding Writer}"></TextBlock>
+                                    <TextBlock Text="{Binding Job}" Width="100"></TextBlock>
                                 </Grid>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <!-- Quantity -->
-                    <GridViewColumn Header="Quantity">
+                    <!-- Reason -->
+                    <GridViewColumn Header="Reason">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <Grid>
-                                    <TextBlock Text="{Binding Quantity}" Width="50" TextAlignment="Center"></TextBlock>
+                                    <TextBlock Text="{Binding Reason}"></TextBlock>
                                 </Grid>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <!-- Public date -->
-                    <GridViewColumn Header="Public date">
+                    <!-- From (date) -->
+                    <GridViewColumn Header="From">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <Grid>
-                                    <TextBlock Text="{Binding ShortDate}"></TextBlock>
+                                    <TextBlock Text="{Binding ShortFrom}"></TextBlock>
                                 </Grid>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
-                    </GridViewColumn>                    
+                    </GridViewColumn>
+                    <!-- To (date) -->
+                    <GridViewColumn Header="To">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <TextBlock Text="{Binding ShortTo}"></TextBlock>
+                                </Grid>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <!-- Remaining time -->
+                    <GridViewColumn Header="Remaining">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <TextBlock Text="{Binding Remain}" TextAlignment="Center" Width="70"></TextBlock>
+                                </Grid>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>

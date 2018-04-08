@@ -29,7 +29,7 @@ namespace LibraryManagementSystem
 
             bookList = new ObservableCollection<Books>();
 
-            bookList.Add(new Books() { Id = "B001", Name = "WPF & MVVM", Writer = "Phi Nguyễn", Category = "Programing Language", Quantity = 10, PublicDate = new DateTime(2013, 05, 23).Date });
+            bookList.Add(new Books() { Id = "B001", Name = "WPF & MVVM", Writer = "Phi Nguyễn", Category = "Programing Language", Quantity = 10, PublicDate = new DateTime(2013, 05, 23) });
             bookList.Add(new Books() { Id = "B002", Name = "C# Foundation", Writer = "Phi Nguyễn", Category = "Programing Language", Quantity = 20, PublicDate = new DateTime(2000, 12, 01) });
             bookList.Add(new Books() { Id = "B003", Name = "UML", Writer = "Phi Nguyễn", Category = "Design % Architecture", Quantity = 5, PublicDate = new DateTime(2013, 05, 23) });
             bookList.Add(new Books() { Id = "B004", Name = "Embedded System", Writer = "Phi Nguyễn", Category = "IoT", Quantity = 2, PublicDate = new DateTime(2017, 01, 23) });
